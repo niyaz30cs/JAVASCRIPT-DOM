@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>DOM</title>
+</head>
+<body>
+    <div class="head">
+        <h1>DOM(Document Object Modal)</h1>
+    </div>
+    <br>
+    <h2 id="text">Q-1.Write the code to access element which is having id as "text"?</h2>
+    <p class="text">ANS:-var id_element=document.getElementById("text");</p>
+    <pre>
+        var idelement=document.getElementById("text");
+            console.log(idelement.innerText);
+    </pre>
+    <br>
+    <h2>Q-2.Write the code to access element which is having the tag as "h1"?</h2>
+    <p class="text">ANS:-var tagname=document.getElementByTagName("h1");</p>
+    <pre>
+        var tagname=document.getElementsByTagName("h2");
+            console.log(tagname.innertext);
+    </pre>
+    <br>
+    <h2>Q-3.Write the code access element which having class as"box"?</h2>
+    <p class="text">ANS:- var classname=document.getElementsByClassName("box");
+        classname[0].innerHTML;
+    <div class="box">I AM BOX-1</div>
+    <div class="box">I AM BOX-2</div>
+    <div class="box">I AM BOX-3</div>
+    <div class="box">I AM BOX-4</div>
+    <div class="box">I AM BOX-5</div>
+    <div class="box">I AM BOX-6</div>
+    <div class="box">I AM BOX-7</div>
+    <pre>
+        var box=document.getElementsByClassName("box");
+                console.log(box[3].innerText);
+    </pre>
+    </p>
+    <br>
+    <h2>Q-4.Change the heading from "Hello World" using DOM functions? RULE(1)
+        <h1 id="change">Hello</h1>
+        <br>
+        <button onclick="tochange()">clickMe</button>
+        <pre>
+              function tochange(){
+
+                var change=document.getElementById("change");
+                change.innerText="Hello World...";
+              }
+        </pre>
+    </h2>
+    <h2>Q-5.Change the heading from "Hello World" using DOM functions? RULE(2)</h2>    
+        <br>
+        <p id="change2">HELLO
+        <pre>
+            var change2=document.getElementById("change2");
+                change2.addEventListener("click",function(){
+                change2.innerText="HELLO WORLD...";
+                change2.style.color="red";
+                change2.style.backgroundColor="cyan"
+                change2.style.fontSize="40px"
+
+
+            })
+        </pre>
+        </p> 
+        <br>
+        <h2>Q-6.Create an HTML page having content as "hello world" and button name replace text.
+            When user will click on this button page content should be changed to "Welcome to Elevation academy"
+        </h2>
+        <p>ANS:-
+            <div class="center">
+            <h1 id="page">"Hell0 World"</h1>
+            <button class="button" onclick="function1()">Replace text</button>
+            </div>
+            <pre>
+                function function1(){
+                    var page=document.getElementById("page");
+                
+                    page.innerText='"Welcome to Elevation Academy"';
+                }
+            </pre>
+        </p>
+        <h2>Q-7.(< h1 >Hello < /h1> )-Add one style attribute and given text color as red and id value
+        as "heading"in the above given h1 tag using DOM function?</h2> 
+        <p id="heading">HELLO
+            <pre>
+                var heading=document.getElementById("heading");
+                    heading.addEventListener("click",function(){
+                    heading.style.color="red";
+                    heading.style.fontSize="50px";
+    })
+            </pre>
+        </p>
+        <h2>Q-8.Create three card on html page and arrange them using flex property in row or horizontal
+            direction and also create button name "change flex direction". when user click on this button the
+            card arrangement should be changed to vertical direction?
+        </h2>
+        <p>ANS:-
+            <div class="flex" id="flex">
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+            </div>
+            <br>
+            <button onclick="display()">Change flex direction</button>
+            <pre>
+                <pre>
+                    function display(){
+                        var flex1=document.getElementById("flex");
+                
+                        flex1.style.flexDirection="column";
+                      }
+                </pre>
+            </pre>
+        </p>
+
+        <h2>Q-9.Using tugglemodal on question number 8?</h2>
+        <p>ANS:-
+            <div class="flex" id="flex2">
+                <div class="gift"></div>
+                <div class="gift"></div>
+                <div class="gift"></div>
+            </div>
+            <pre>
+                var flex2=document.getElementById("flex2");
+                    flex2.addEventListener("click",function(){
+                     flex2.style.flexDirection="column";
+
+                 })
+            </pre>
+        </p>
+
+        <h2>Q-10-Another function?</h2>
+        <p>ANS:-
+            <div class="flex" id="flex3">
+                <div class="max"></div>
+                <div class="max"></div>
+                <div class="max"></div>
+            </div>
+
+    <pre>
+        let count=0;
+        var flex3=document.getElementById("flex3");
+        flex3.addEventListener("click",function(){
+        if(count===0)
+           {
+            flex3.style.flexDirection="column";
+            count++; 
+           }
+      else
+         {
+            flex3.style.flexDirection="row";
+             count--;
+         }
+
+     })
+    </pre>
+        </p>
+
+    <h2>Q-11.What's the difference between window and document?</h2>
+    <table border="2px" cellspacing="0" class="table">
+        <tr>
+            <th>Documnet</th>
+            <th>Window</th>
+        </tr>
+        <tr>
+            <td>1.it represented the document loaded inside the window or browser.</td>
+            <td>1.it represented the browser window in which you are seeing the content.</td>
+        </tr>
+        <tr>
+            <td>2.The property related to it are store in the document object.</td>
+            <td>2.The properties related to it are stored in the window object.</td>
+        </tr>
+        <tr>
+            <td>3.it loaded after the loading the window because the window contains a document. </td>
+            <td>3.it loaded before the document because of the window container document.</td>
+        </tr>
+        <tr>
+            <td>4.it is an object of the window.</td>
+            <td>4.it is an object of the browser.</td>
+        </tr>
+        <tr>
+            <td>5.We can not access windows object properties inside the document.</td>
+            <td>5.We can access document object properties inside the windows.</td>
+        </tr>
+        <tr>
+            <td>6.Example:- document.title will return the tittle of the document.</td>
+            <td>6.Example:- window.document will return the tittle of the document.</td>
+        </tr>
+    </table>
+    <br>
+    <h2>Q-12.Write code to implement timer clock using JS-display HH:MM:SS--the timer should keeping updating every second</h2>
+    <div id="clock" class="clock">
+        <div id="hour"></div>
+        <div id="minutes"></div>
+        <div id="second"></div>
+        <div id="AMPM"></div>
+    </div>
+</body>
+<script src="./script.js"></script>
+</html>
