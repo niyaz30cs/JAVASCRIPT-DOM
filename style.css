@@ -88,3 +88,14 @@ button
     justify-content: center;
     background-color: deepskyblue;
 }
+.guess
+{
+    width: 200px;
+    height: 50px;
+    background-color: blue;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 10px;
+}
